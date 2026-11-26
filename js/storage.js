@@ -227,6 +227,20 @@ const admins = [
     email: "mahtab@example.com",
     password: "mahtab123",
   },
+  {
+    userId: 2,
+    name: "Aarush Rajendran",
+    studentId: "ADMIN02",
+    email: "aarush@example.com",
+    password: "aarush123",
+  },
+  {
+    userId: 3,
+    name: "Aditya Punetha",
+    studentId: "ADMIN03",
+    email: "aditya@example.com",
+    password: "aditya123",
+  },
 ];
 
 const clubs = [

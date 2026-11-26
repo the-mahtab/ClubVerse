@@ -46,6 +46,7 @@ function resetData() {
   saveData("memberships", memberships);
   saveData("registrations", registrations);
   saveData("users", users);
+  saveData("admins", admins);
   localStorage.removeItem(("currentUserId"));
   localStorage.removeItem("admin");
 }
