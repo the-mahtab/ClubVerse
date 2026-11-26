@@ -1,4 +1,3 @@
-redirect();
 window.addEventListener("pageshow", redirect);
 
 const totalMembers = document.querySelector("#total-members");

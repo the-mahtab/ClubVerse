@@ -1,3 +1,4 @@
+window.addEventListener("pageshow", redirect);
 
 const param = new URLSearchParams(window.location.search);
 const page = param.get("page");

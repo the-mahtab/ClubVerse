@@ -1,4 +1,3 @@
-redirect();
 window.addEventListener("pageshow", redirect);
 
 // variables

@@ -1,4 +1,4 @@
-
+window.addEventListener("pageshow", redirect);
 
 // club form elements
 const clubForm = document.querySelector(".club-form");
