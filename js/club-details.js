@@ -40,7 +40,7 @@ function clubDetails() {
     if (club.id === page) {
       details.innerHTML = `
             <div class="img">
-          <img src="images/${page}.png">
+          <img src="images/${page}.png" alt="${page} club">
         </div>
         <div class="club-info">
           <h2 class="p-1">${club.name}</h2>
