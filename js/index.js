@@ -1,5 +1,3 @@
-resetData();
-
 loadData("users", users);
 loadData("admins", admins);
 loadData("clubs", clubs);
