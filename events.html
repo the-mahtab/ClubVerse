@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events | Clubverse</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/events.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav">
+        <a class="logo" href="index.html">CLUB<span>VERSE</span></a>
+        <div class="links">
+          <!-- <a href="index.html">Home</a> -->
+        </div>
+      </nav>
+    </header>
+    <main class="container page">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">MAKE SOMETHING HAPPEN</p>
+          <h1>Campus events</h1>
+          <p class="muted">
+            Explore workshops, meetups, and creative sessions hosted by clubs.
+          </p>
+        </div>
+      </div>
+
+      <section class="card filter-bar" aria-label="Filter events">
+        <div class="field">
+          <label for="search">Search events</label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by event name, club, or location"
+          />
+        </div>
+        <div class="field">
+          <label for="club">Club</label>
+          <select id="club">
+            <option value="all">All clubs</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Date</label>
+          <select id="date">
+            <option value="any">Any date</option>
+            <option value="this-week">This week</option>
+            <option value="this-month">This month</option>
+          </select>
+        </div>
+        <div class="filter-actions">
+          <button id="search-btn" type="button" class="btn small">Search</button>
+          <button id="reset-btn" type="button" class="btn small outline">
+            Reset
+          </button>
+        </div>
+      </section>
+
+      <div id="events-grid" class="grid two"></div>
+    </main>
+    <footer>
+      <div class="container footer">
+        <a class="logo" href="index.html">CLUB<span>VERSE</span></a>
+        <small>Explore · Connect · Create</small>
+      </div>
+    </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/common.js"></script>
+    <script type="module" src="js/events.js"></script>
+  </body>
+</html>

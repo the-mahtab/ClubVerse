@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Clubverse</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="heading">
+        <div>
+          <p class="logo">CLUB<span>VERSE</span></p>
+        </div>
+        <nav class="navigation">
+          <a href="index.html">Home</a>
+          <a href="club-admin.html">Manage Clubs</a>
+          <a class="events">Events</a>
+          <a id="log-out">Log out</a>
+        </nav>
+      </header>
+      <main class="hero">
+        <section class="section-1">
+          <div class="intro">
+            <p class="p1" id="admin-dash">ADMIN DASHBOARD</p>
+            <h1>System overview</h1>
+            <p class="p2">
+              Manage clubs, events, membership requests and reports.
+            </p>
+          </div>
+          <a href="club-admin.html">Manage Clubs</a>
+        </section>
+
+        <section class="section-2">
+          <div class="report">
+            <p class="p1">Total members</p>
+            <p class="p2" id="total-members">325</p>
+            <p class="p3">Across all clubs</p>
+          </div>
+          <div class="report">
+            <p class="p1">Total clubs</p>
+            <p class="p2" id="total-clubs">03</p>
+            <p class="p3">Active clubs</p>
+          </div>
+          <div class="report">
+            <p class="p1">Pending requests</p>
+            <p class="p2" id="pending-requests">12</p>
+            <p class="p3">Need review</p>
+          </div>
+          <div class="report">
+            <p class="p1">Upcoming events</p>
+            <p class="p2" id="upcoming-events">08</p>
+            <p class="p3">Scheduled events</p>
+          </div>
+        </section>
+
+        <section class="section-3">
+          <div class="title">
+            <div class="info">
+              <p class="p1">CORE RECORDS</p>
+              <p class="p2">Manage clubs</p>
+            </div>
+            <button class="club-btn">+ Add Club</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table id="clubs">
+              <thead>
+                <tr class="tr-1">
+                <th>CLUB</th>
+                <th>CATEGORY</th>
+                <th>MEMBERS</th>
+                <th>PENDING</th>
+                <th>ACTIONS</th>
+              </tr>
+              </thead>
+
+              <tbody id="club-table">
+              </tbody>
+              
+            </table>  
+          </div>
+        </section>
+
+        <section class="section-4">
+          <div class="title">
+            <p class="up-event">Upcoming events</p>
+            <button class="event-btn">+ Add Event</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table id="events">
+              <thead>
+                <tr>
+                <th>EVENT</th>
+                <th>CLUB</th>
+                <th>DATE</th>
+                <th>REGISTRATIONS</th>
+                <th>ACTIONS</th>
+              </tr>
+              </thead>
+              <tbody id="event-table">
+
+              </tbody>
+              
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="foot-container">
+        <div>
+          <p class="logo">CLUB<span>VERSE</span></p>
+        </div>
+        <a href="#admin-dash">Admin Dashboard</a>
+      </div>
+    </footer>
+
+    <div class="remove-container hidden">
+      <div class="validation h">
+        <p>Are you sure you want to remove this <span class="c">club</span><span class="e">event</span></p>
+        <div class="btn-container">
+          <button id="no">No</button>
+          <button id="yes">Yes</button>
+        </div>
+      </div>
+      <div class="confirmation h">
+        <p><span class="c">Club</span><span class="e">event</span> removed successfully</p>
+      </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/common.js"></script>
+    <script type="module" src="js/admin-dashboard.js"></script>
+  </body>
+</html>
+
+

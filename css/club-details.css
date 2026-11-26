@@ -1,0 +1,216 @@
+:root{--bg:#101019;
+      --surface:#1c1c2b;
+      --purple:#a78bfa;
+      --lime:#c5f467;
+      --text:#f7f7fc;
+      --muted:#a6a6ba;
+      --border:#303044;
+      --th-bg: #171725;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 25px auto;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.logo:hover {
+    cursor: pointer;
+    color: var(--lime);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.links {
+  display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.links a {
+  color: var(--muted);
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+.a-1 {
+  margin-top: 0;
+  color: var(--purple);
+}
+
+.a-1:hover {
+  color: var(--lime);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.img, .club-info {
+  flex: 1 1 48%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: red;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.club-info{
+  background-color: var(--surface);
+  padding: 20px;
+}
+
+.club-info .p-1 {
+  margin-bottom: 15px;
+}
+
+.club-info .p-2 {
+  display: inline-block;
+    font-size: 12px;
+    background-color: var(--lime);
+    color: black;
+    font-weight: bold;
+    padding: 6px 10px;
+    padding-bottom: 4px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.club-info .p-3 {
+  border-bottom: 1px solid var(--border);
+  margin-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.club-info .p-4 span {
+  color: var(--lime);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.club-info .p-5 {
+  margin: 20px 0 20px 0;
+}
+
+.club-info .p-5 span {
+  color: var(--muted);
+}
+
+.club-info button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--purple);
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#join:hover {
+  background-color: var(--lime);
+  
+}
+
+#joined {
+  background-color: green;
+}
+
+#join-pending {
+  background-color: bisque;
+}
+
+.about {
+  background-color: var(--surface);
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.about .p-1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--lime);
+  margin-bottom: 20px;
+}
+
+.about .p-2 {
+  color: var(--muted);
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+
+.foot-container {
+    padding: 25px 0;
+    border-top: 1px solid var(--border);
+    background-color: var(--footer-color);
+}
+
+footer {
+    width: min(100% - 32px, 1100px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+footer .p-1 {
+    color: var(--muted);
+    margin-top: 7px;
+    font-size: 15px;
+}

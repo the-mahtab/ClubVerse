@@ -1,0 +1,64 @@
+.profile-page {
+  max-width: 850px;
+}
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.profile-top h2,
+.profile-top p {
+  margin-bottom: 4px;
+}
+.avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--purple);
+  color: #171321;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.form-card {
+  padding: 27px;
+}
+
+.btn-cont {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.btn-cont .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45px;
+    padding: 10px 17px;
+}
+
+
+/* Center the entire profile section */
+.profile-page {
+    width: min(850px, 92%);
+    margin: 0 auto;
+}
+
+/* Center the page heading */
+.profile-page .page-heading {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Center the profile card */
+.profile-page .form-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+

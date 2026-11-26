@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile | Clubverse</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav">
+        <a class="logo" href="index.html">CLUB<span>VERSE</span></a>
+        <div class="links">
+          <a href="member-dashboard.html">Dashboard</a>
+          <a href="events.html">Events</a>
+          <a id="log-out" href="login.html">Log out</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container page profile-page">
+      <div class="page-heading">
+        <div>
+          <h1>My profile</h1>
+          <p class="muted">Manage your personal information.</p>
+        </div>
+      </div>
+      <section class="card form-card">
+        <div class="profile-top">
+          <div class="avatar" id="profile-avatar">A</div>
+          <div>
+            <h2 id="profile-display-name">Alex Student</h2>
+            <p class="muted" id="profile-display-role">Member</p>
+          </div>
+        </div>
+        <form action="#" id="profile-form">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" type="text" placeholder="Enter your full name" />
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="field wide">
+              <label for="password">Password</label>
+              <div style="display: flex; gap: 8px; align-items: center">
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                />
+                <button
+                  type="button"
+                  id="toggle-password"
+                  class="btn small outline"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="course">Course / Department</label>
+              <input id="course" type="text" placeholder="e.g. B.Tech CSE" />
+            </div>
+            <div class="field">
+              <label for="year">Year of study</label>
+              <select id="year">
+                <option value="">Select year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+              </select>
+            </div>
+            <div class="field wide">
+              <label for="bio">About me</label>
+              <textarea
+                id="bio"
+                rows="4"
+                placeholder="Tell your clubs a little about yourself"
+              ></textarea>
+            </div>
+          </div>
+          <div class="btn-cont">
+            <button class="btn" type="submit">Save Changes</button>
+            <a class="btn outline" href="member-dashboard.html">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer">
+        <a class="logo" href="index.html">CLUB<span>VERSE</span></a>
+        <small>Clubverse Membership System</small>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/storage.js"></script>
+    <script type="module" src="js/profile.js"></script>
+    <script>
+       (
+
+        function () {
+
+          const form = document.getElementById("profile-form");
+          const avatarEl = document.getElementById("profile-avatar");
+          const displayNameEl = document.getElementById("profile-display-name");
+          const displayRoleEl = document.getElementById("profile-display-role");
+
+          const nameInput = document.getElementById("name");
+          const emailInput = document.getElementById("email");
+          const passwordInput = document.getElementById("password");
+          const togglePasswordBtn = document.getElementById("toggle-password");
+          const courseInput = document.getElementById("course");
+          const yearSelect = document.getElementById("year");
+          const bioInput = document.getElementById("bio");
+
+          function getActiveUser() {
+            const allUsers = getData("users");
+            const activeId = Number(localStorage.getItem("currentUserId"));
+
+            if (activeId !== null && activeId !== "" && !Array.isArray(activeId)) {
+              const found = allUsers.find(
+                (u) => Number(u.userId) === Number(activeId),
+              );
+              if (found) return found;
+            }
+            return allUsers[0] || null;
+          }
+
+          function updateHeaderPreview(user) {
+            if (!user) return;
+            const cleanName = (user.name || "Member").trim();
+            displayNameEl.textContent = cleanName || "Member";
+            avatarEl.textContent = cleanName
+              ? cleanName.charAt(0).toUpperCase()
+              : "M";
+            const details = [user.course, user.year].filter(Boolean).join(" · ");
+            displayRoleEl.textContent = details ? `Member · ${details}` : "Member";
+          }
+
+          function loadProfile() {
+            const activeUser = getActiveUser();
+            if (!activeUser) return;
+
+            nameInput.value = activeUser.name || "";
+            emailInput.value = activeUser.email || "";
+            passwordInput.value = activeUser.password || "";
+            courseInput.value = activeUser.course || "";
+            yearSelect.value = activeUser.year || "";
+            bioInput.value = activeUser.about || "";
+
+            updateHeaderPreview(activeUser);
+          }
+
+          togglePasswordBtn.addEventListener("click", () => {
+            const isHidden = passwordInput.type === "password";
+            passwordInput.type = isHidden ? "text" : "password";
+            togglePasswordBtn.textContent = isHidden ? "Hide" : "Show";
+          });
+
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const activeUser = getActiveUser();
+            if (!activeUser) return;
+
+            const users = getData("users");
+
+            const index = users.findIndex(
+              (user) => user.userId === activeUser.userId,
+            );
+
+            if (index === -1) return;
+
+            if (
+              !nameInput.value.trim() ||
+              !emailInput.value.trim() ||
+              !passwordInput.value.trim()
+            ) {
+              alert("Please provid valid info");
+              return;
+            }
+
+            users[index] = {
+              ...users[index],
+              name: nameInput.value.trim(),
+              email: emailInput.value.trim(),
+              password: passwordInput.value,
+              course: courseInput.value.trim(),
+              year: yearSelect.value,
+              about: bioInput.value.trim(),
+            };
+
+            saveData("users", users);
+
+            const refreshedUser = getActiveUser();
+            updateHeaderPreview(refreshedUser);
+
+            alert("Profile saved successfully!");
+          });
+
+          loadProfile();
+        })();
+    </script>
+  </body>
+</html>

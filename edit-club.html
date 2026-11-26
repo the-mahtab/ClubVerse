@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit club details</title>
+    <link rel="stylesheet" href="css/edit-clubs.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-container">
+          <a href="#" class="logo">CLUB<span>VERSE</span></a>
+          <nav>
+            <a href="admin-dashboard.html" class="navigation"
+              >Admin Dashboard</a
+            >
+          </nav>
+        </div>
+      </header>
+      <div class="form-container club hidden">
+        <div class="club-form">
+          <div class="head">
+            <h2 class="title">Edit Club Details</h2>
+            <a class="back" href="admin-dashboard.html">← Dashboard</a>
+          </div>
+          <form id="club-form">
+            <div class="row">
+              <p>Name:</p>
+              <input id="name" type="text" required placeholder="club name" />
+            </div>
+            <div class="row">
+              <p>Category:</p>
+              <input id="category" type="text" required />
+            </div>
+            <div class="t">
+              <p>Description:</p>
+              <textarea
+                id="description"
+                required
+                placeholder="description of club"
+              ></textarea>
+            </div>
+            <div class="t">
+              <p>Activities:</p>
+              <textarea id="activities" required></textarea>
+            </div>
+            <div class="t">
+              <p>About:</p>
+              <textarea
+                id="about"
+                required
+                placeholder="about the club"
+              ></textarea>
+            </div>
+            <button id="btn">Edit Club</button>
+            <a href="admin-dashboard.html" class="b">← Back to Dashboard</a>
+          </form>
+        </div>
+      </div>
+      <div class="form-container event hidden">
+        <div class="event-form">
+          <div class="head">
+            <h2 class="title">Edit Event Details</h2>
+            <a class="back" href="admin-dashboard.html">← Dashboard</a>
+          </div>
+          <form id="event-form">
+            <div class="row">
+              <p>Club Id:</p>
+              <input id="club-id" type="text" />
+            </div>
+            <div class="row">
+              <p>Name:</p>
+              <input id="evt-name" type="text" required />
+            </div>
+            <div class="row">
+              <p>Date:</p>
+              <input id="date" type="text" required />
+            </div>
+            <div class="row">
+              <p>Time:</p>
+              <input type="time" id="time" required />
+            </div>
+            <div class="row">
+              <p>Location:</p>
+              <input type="text" id="location" required />
+            </div>
+            <div class="t">
+              <p>Description:</p>
+              <textarea
+                id="evt-description"
+                required
+                placeholder="description of club"
+              ></textarea>
+            </div>
+            <button id="btn">Edit Event</button>
+            <a href="admin-dashboard.html" class="b">← Back to Dashboard</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/common.js"></script>
+    <script type="module" src="js/edit-club.js"></script>
+  </body>
+</html>

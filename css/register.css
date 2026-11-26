@@ -1,0 +1,223 @@
+:root {
+  --bg: #101019;
+  --surface: #1c1c2b;
+  --purple: #a78bfa;
+  --lime: #c5f467;
+  --text: #f7f7fc;
+  --muted: #a6a6ba;
+  --border: #303044;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+.container {
+  width: min(100% - 32px, 1100px);
+  min-height: 100vh;
+  margin: 25px auto;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+.logo:hover {
+  cursor: pointer;
+  color: var(--lime);
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+}
+.navigation a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.navigation a:hover {
+  color: var(--text);
+}
+
+hr {
+  border: 0.2px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.form-fill {
+  width: min(100% - 5px, 700px);
+  margin: 0 auto;
+  background-color: var(--surface);
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+form {
+  width: 100%;
+}
+
+form .title {
+  font-size: 13px;
+  color: var(--lime);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+form h1 {
+  font-size: 40px;
+  margin: 16px 0;
+}
+
+form .description {
+  margin-bottom: 26px;
+  color: var(--muted);
+}
+
+.fill {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.left-col,
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 47%;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+form input,
+form select {
+  width: 100%;
+  background-color: var(--bg);
+  height: 50px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding-left: 10px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.p {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus {
+  color: var(--text);
+  border: 1px solid var(--purple);
+  outline: none;
+}
+
+.row-2,
+.row-4 {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row-4 select {
+  height: 45px;
+}
+
+form .btn {
+  width: 80%;
+  height: 35px;
+  margin: 0 auto 30px auto;
+  background-color: var(--purple);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--lime);
+}
+
+.ask {
+  text-align: center;
+}
+
+.ask a {
+  text-decoration: none;
+  margin-left: 8px;
+  color: var(--purple);
+}
+
+.ask a:hover {
+  color: var(--lime);
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .form-fill {
+    padding: 20px;
+  }
+
+  form h1 {
+    font-size: 34px;
+  }
+
+  form .description {
+    line-height: 1.4;
+  }
+
+  .ask {
+    font-size: 15px;
+  }
+}

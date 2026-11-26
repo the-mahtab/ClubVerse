@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Clubverse</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav">
+        <a class="logo" href="index.html"> CLUB <span> VERSE</span></a>
+        <div class="links">
+          <a href="index.html"> Home </a>
+          <a href="register.html"> Register </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="auth">
+      <section class="card form-card login-card">
+        <p class="eyebrow">Let’s Get You In 🤝</p>
+        <h1>Make your presence count.</h1>
+        <p class="muted">
+          Stay on top of your clubs, memberships, and upcoming events.
+        </p>
+
+        <form id="login-form">
+          <div class="field">
+            <label for="email"> Email address </label>
+            <input
+              id="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="field" id="student-id-field" hidden>
+            <label for="student-id">Student ID</label>
+            <input
+              id="student-id"
+              type="text"
+              placeholder="Enter your student ID"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="field" id="password-field">
+            <div class="pswrd">
+              <label for="password"> Password </label>
+              <p id="forgot-password" role="button" tabindex="0">
+                forgot password?
+              </p>
+            </div>
+
+            <div class="password-wrapper">
+              <input
+                id="password"
+                type="password"
+                required
+                placeholder="Enter your password"
+              />
+              <button
+                type="button"
+                id="togglePassword"
+                class="toggle-password"
+                aria-label="Show password"
+              >
+                <svg
+                  id="eyeOpen"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg
+                  id="eyeClosed"
+                  style="display: none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                  ></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p id="login-error" class="muted"></p>
+          <button class="btn full" type="submit">Log In</button>
+
+          <p class="muted log">
+            Don’t have an account?
+            <a href="register.html"> Create an account </a>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/common.js"></script>
+    <script src="js/storage.js"></script>
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>

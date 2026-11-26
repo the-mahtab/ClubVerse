@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Club</title>
+    <link rel="stylesheet" href="css/add-club.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-container">
+          <a href="#" class="logo">CLUB<span>VERSE</span></a>
+          <nav>
+            <a href="admin-dashboard.html" class="navigation"
+              >Admin Dashboard</a
+            >
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section>
+          <div class="form-container">
+            <div class="club-form hidden">
+              <div class="head">
+                <h2 class="title">Add Club Details</h2>
+                <a class="back" href="admin-dashboard.html">← Dashboard</a>
+              </div>
+              <form id="club-form">
+                <div class="row">
+                  <p>Id:</p>
+                  <input
+                    id="clubId"
+                    type="text"
+                    required
+                    placeholder="enter club id (eg. coding, music)"
+                  />
+                </div>
+                <div class="row">
+                  <p>Name:</p>
+                  <input
+                    id="name"
+                    type="text"
+                    required
+                    placeholder="club name"
+                  />
+                </div>
+                <div class="row">
+                  <p>Category:</p>
+                  <input id="category" type="text" required />
+                </div>
+                <div class="t">
+                  <p>Description:</p>
+                  <textarea
+                    id="description"
+                    required
+                    placeholder="description of club"
+                  ></textarea>
+                </div>
+                <div class="t">
+                  <p>About:</p>
+                  <textarea
+                    id="about"
+                    required
+                    placeholder="about club"
+                  ></textarea>
+                </div>
+                <div class="t">
+                  <p>Activities:</p>
+                  <textarea id="activities" required></textarea>
+                </div>
+                <button id="btn">Create Club</button>
+              </form>
+            </div>
+
+            <div class="event-form hidden">
+              <div class="head">
+                <h2 class="title">Add Event Details</h2>
+                <a class="back" href="admin-dashboard.html">← Dashboard</a>
+              </div>
+              <form id="event-form">
+                <div class="row">
+                  <p>Id:</p>
+                  <input
+                    id="event-id"
+                    type="text"
+                    required
+                    placeholder="enter club id (eg. coding, music)"
+                  />
+                </div>
+                <div class="row">
+                  <p>Name:</p>
+                  <input
+                    id="event-name"
+                    type="text"
+                    required
+                    placeholder="event name"
+                  />
+                </div>
+                <div class="row">
+                  <p>Date:</p>
+                  <input
+                    id="event-date"
+                    type="date"
+                    required
+                    placeholder="event name"
+                  />
+                </div>
+                <div class="row">
+                  <p>Time:</p>
+                  <input
+                    id="event-time"
+                    type="time"
+                    required
+                    placeholder="event name"
+                  />
+                </div>
+                <div class="row">
+                  <p>Location:</p>
+                  <input
+                    id="location"
+                    type="text"
+                    required
+                    placeholder="enter location"
+                  />
+                </div>
+                <div class="t">
+                  <p>Description:</p>
+                  <textarea
+                    id="event-desc"
+                    required
+                    placeholder="description of event"
+                  ></textarea>
+                </div>
+                <button id="btn">Create event</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <script src="js/storage.js"></script>
+      <script src="js/common.js"></script>
+      <script type="module" src="js/add-club.js"></script>
+    </div>
+  </body>
+</html>
+
+
+
+

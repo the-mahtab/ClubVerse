@@ -1,0 +1,51 @@
+.membership {
+  display: flex;
+  gap: 15px;
+}
+.membership-note {
+  font-size: 0.85rem;
+}
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.date {
+  width: 52px;
+  min-width: 52px;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+#log-out {
+  cursor: pointer;
+}
+
+.date b {
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+.date small {
+  color: var(--lime);
+}
+.event-info {
+  flex: 1;
+}
+.event-info h3,
+.event-info p {
+  margin-bottom: 4px;
+}
+.section .heading h2 {
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  .membership {
+    flex-wrap: wrap;
+  }
+}

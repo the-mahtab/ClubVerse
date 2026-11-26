@@ -1,0 +1,295 @@
+:root {
+  --bg: #101019;
+  --surface: #1c1c2b;
+  --purple: #a78bfa;
+  --lime: #c5f467;
+  --text: #f7f7fc;
+  --muted: #a6a6ba;
+  --border: #303044;
+  --danger: #ff8d9a;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    16px/1.6 Arial,
+    sans-serif;
+}
+a {
+  color: var(--purple);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--lime);
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+.muted,
+small {
+  color: var(--muted);
+}
+.eyebrow {
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.btn, .cont-2 button{
+  display: inline-block;
+  padding: 11px 17px;
+  border: 1px solid var(--purple);
+  border-radius: 8px;
+  background: var(--purple);
+  color: #171321;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn:hover, .cont-2 button:hover {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #171321;
+}
+.btn.small {
+  padding: 7px 12px;
+  font-size: 0.9rem;
+}
+.btn.full {
+  width: 100%;
+  text-align: center;
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  color: var(--text);
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: var(--purple);
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  flex-wrap: wrap;
+}
+.links a {
+  color: var(--muted);
+}
+.links a:hover {
+  color: var(--text);
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+
+/* Forgot Password */
+#forgot-password {
+  cursor: pointer;
+  color: #a78bfa;
+  transition: color 0.2s ease;
+}
+
+#forgot-password:hover {
+  color: #c5f467;
+}
+
+/* Ensure hidden fields remain hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* Password recovery success message */
+#login-error.success {
+  color: #c5f467;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Error message */
+#login-error:not(.success) {
+  color: #ff7070;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #131320;
+  color: var(--text);
+  font: inherit;
+}
+input:focus {
+  outline: 1px solid var(--purple);
+}
+
+.pswrd {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+
+.pswrd p {
+  margin-bottom: 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--purple);
+}
+
+.pswrd p:hover {
+  color: var(--lime);
+  cursor: pointer;
+}
+
+/* Password visibility toggle */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 42px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: var(--text);
+  background-color: rgba(167, 139, 250, 0.12);
+}
+
+.toggle-password:focus-visible {
+  outline: 1px solid var(--purple);
+  color: var(--purple);
+}
+
+
+.auth {
+  min-height: 70vh;
+  padding: 45px 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-card {
+  width: min(650px, 100%);
+  padding: 30px;
+  border-radius: 15px;
+}
+.login-card {
+  max-width: 470px;
+  padding: 30px;
+}
+.login-card h1 {
+  margin-bottom: 10px;
+}
+.auth .form-card form {
+  margin-top: 22px;
+}
+.simple-footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.log {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #ffffff;
+}

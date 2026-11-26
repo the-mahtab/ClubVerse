@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Membership | Clubverse</title>
+    <link rel="stylesheet" href="css/club-admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="heading">
+        <p class="logo">CLUB<span>VERSE</span></p>
+        <nav class="navigation">
+          <a href="index.html">Home</a>
+          <a href="admin-dashboard.html">Admin Dashboard</a> 
+          <a href="events.html">Events</a>
+          <a id="log-out">Log out</a>
+        </nav>
+      </header>
+      <main>
+        <section class="section-1">
+          <div class="intro">
+            <p class="p-1">CLUB MANAGEMENT</p>
+            <h1>Club members & requests</h1>
+            <p class="p-2">
+              Choose a club to review active members and applications.
+            </p>
+          </div>
+          <a href="admin-dashboard.html" class="dashboard"> ← Dashboard </a>
+        </section>
+
+        <section class="section-2">
+          <div class="club-selection">
+            <label for="club">Select club</label>
+            <select id="club"></select>
+          </div>
+          <div class="status">
+            <div class="active">
+              <p class="p-1">Active members</p>
+              <p class="p-2 members"></p>
+            </div>
+            <div class="pending">
+              <p class="p-1">Pending requests</p>
+              <p class="p-2 pendin"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-3">
+          <p>Members</p>
+          <div class="search-members">
+            <div class="search-bar">
+              <label for="members">Search members</label>
+              <input
+                type="text"
+                id="members"
+                placeholder="Name or Student ID"
+              />
+            </div>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>NAME</th>
+                    <th>STUDENT ID</th>
+                    <th>EMAIL</th>
+                    <th>JOINED ON</th>
+                  </tr>
+                </thead>
+
+                <tbody id="approved-container"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-4">
+          <div class="requests">
+            <p>Pending requests</p>
+            <span class="pr"></span>
+          </div>
+
+          <div class="section-4-cont">
+            <div class="search">
+              <input type="text" id="search" placeholder="Name or Student ID" />
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>APPLICANT</th>
+                    <th>STUDENT ID</th>
+                    <th>APPLIED ON</th>
+                    <th>DECISION</th>
+                  </tr>
+                </thead>
+
+                <tbody id="pending-container">
+                  <tr id="bye">
+                    <td>ansari mahtab</td>
+                    <td>stu10</td>
+                    <td>12 oct 2026</td>
+                    <td>
+                      <button id="hi">appove</button>
+                      <button id="hello">reject</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <div class="overlay">
+          <div class="popup-1 popup">
+            <p id="confirmation">
+              Are you sure you want to reject this request ?
+            </p>
+            <div class="btn-container">
+              <button id="no" class="b">No</button>
+              <button id="yes" class="b">Yes</button>
+            </div>
+          </div>
+          <div class="popup-2 popup">
+            <p>Rejected sucessfully</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="foot">
+        <p class="logo">CLUB<span>VERSE</span></p>
+        <a href="#">Club Membership Management</a>
+      </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/common.js"></script>
+    <script type="module" src="js/club-admin.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Member Dashboard | Clubverse</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/member-dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container nav">
+        <a class="logo" href="index.html">CLUB<span>VERSE</span></a>
+        <div class="links">
+          <a href="index.html">Home</a><a href="events.html">Events</a
+          ><a href="profile.html">Profile</a>
+          <a id="log-out">Log out</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container page">
+      <div class="page-heading">
+        <div>
+          <h1>Hey, Alex 👋</h1>
+          <p class="muted">Here’s what’s happening with your campus life.</p>
+        </div>
+        <a class="btn" href="index.html#clubs">Explore Clubs</a>
+      </div>
+      <div class="grid three stats">
+        <article class="card inside">
+          <p class="muted">My clubs</p>
+          <strong>02</strong><small>Joined or requested</small>
+        </article>
+        <article class="card inside">
+          <p class="muted">Pending requests</p>
+          <strong>01</strong><small>Waiting for review</small>
+        </article>
+        <article class="card inside">
+          <p class="muted">Registered events</p>
+          <strong>02</strong><small>Upcoming events</small>
+        </article>
+      </div>
+      <section class="section">
+        <div class="heading">
+          <div>
+            <p class="eyebrow">YOUR CLUBS</p>
+            <h2>Membership status</h2>
+          </div>
+        </div>
+        <div class="grid two">
+          <article class="card inside membership">
+            <div>
+              <h3>Coding Club</h3>
+              <p class="muted">Technical</p>
+              <span class="status approved">Approved</span>
+              <a href="club-details.html?page=coding">View club ↗</a>
+            </div>
+          </article>
+          <article class="card inside membership">
+            <div>
+              <h3>Photography Club</h3>
+              <p class="muted">Creative Arts</p>
+              <span class="status pending">Pending approval</span>
+
+              <a href="club-details.html?page=photography">View club ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="card inside">
+        <div class="heading">
+          <div>
+            <h2>Registered events</h2>
+          </div>
+          <a href="events.html">Browse events →</a>
+        </div>
+        <div class="event-row">
+          <div class="date"><b>24</b><small>OCT</small></div>
+          <div class="event-info">
+            <h3>Intro to Web Development</h3>
+            <p class="muted">Coding Club · 2:00 PM</p>
+            <p>Location: <span class="muted">Computer Lab</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer">
+        <a class="logo" href="index.html">CLUB<span>VERSE</span></a
+        ><small>Member Dashboard</small>
+      </div>
+    </footer>
+  </body>
+
+  <script src="js/storage.js"></script>
+  <script src="js/common.js"></script>
+<script type="module" src="js/member-dashbord.js"></script>
+</html>
