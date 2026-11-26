@@ -1,7 +1,4 @@
-redirect()
-if (!currentUserId) {
-    window.location.replace("index.html");
-}
+
 
 // club form elements
 const clubForm = document.querySelector(".club-form");

@@ -1,7 +1,3 @@
-redirect()
-if (!currentUserId) {
-    window.location.replace("index.html");
-}
 
 const param = new URLSearchParams(window.location.search);
 const page = param.get("page");
