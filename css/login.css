@@ -293,3 +293,71 @@ input:focus {
 .toggle-password:hover {
   color: #ffffff;
 }
+
+
+
+/* ========================================
+   STUDENT / ADMIN LOGIN POPUP
+======================================== */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.popup-box {
+  width: min(400px, 100%);
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.popup-box h2 {
+  color: var(--text);
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.popup-box p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.popup-buttons button {
+  flex: 1;
+  padding: 11px 17px;
+  border: 1px solid var(--purple);
+  border-radius: 8px;
+  background: var(--purple);
+  color: #171321;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.popup-buttons button:hover {
+  background: var(--lime);
+  border-color: var(--lime);
+}
+
+@media (max-width: 400px) {
+  .popup-buttons {
+    flex-direction: column;
+  }
+}

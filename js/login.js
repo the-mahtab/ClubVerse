@@ -16,8 +16,26 @@ const passwordField = document.getElementById("password-field");
 const errorMsg = document.getElementById("login-error");
 const submitBtn = loginForm.querySelector('button[type="submit"]');
 
+// Login role popup elements
+const rolePopup = document.getElementById("login-role-popup");
+const studentLoginBtn = document.getElementById("student-login-btn");
+const adminLoginBtn = document.getElementById("admin-login-btn");
+
 // Track whether user is in password recovery mode
 let recoveryMode = false;
+
+
+// ========================================
+// STUDENT / ADMIN LOGIN POPUP
+// ========================================
+
+studentLoginBtn.addEventListener("click", () => {
+  rolePopup.style.display = "none";
+});
+
+adminLoginBtn.addEventListener("click", () => {
+  rolePopup.style.display = "none";
+});
 
 
 // ========================================
@@ -34,7 +52,7 @@ toggleBtn.addEventListener("click", () => {
 
   toggleBtn.setAttribute(
     "aria-label",
-    isHidden ? "Hide password" : "Show password",
+    isHidden ? "Hide password" : "Show password"
   );
 });
 
@@ -50,7 +68,7 @@ function toggleRecoveryMode() {
   errorMsg.classList.remove("success");
 
   if (recoveryMode) {
-    // Show Student ID field
+    // Show Student ID / Admin ID field
     studentIdField.hidden = false;
 
     // Hide password field
@@ -68,11 +86,11 @@ function toggleRecoveryMode() {
     studentIdInput.value = "";
     passwordInput.value = "";
 
-    // Focus Student ID input
+    // Focus Student ID / Admin ID input
     studentIdInput.focus();
 
   } else {
-    // Hide Student ID field
+    // Hide Student ID / Admin ID field
     studentIdField.hidden = true;
 
     // Show password field
@@ -118,55 +136,98 @@ forgotPassword.addEventListener("keydown", (e) => {
 
 function recoverPassword() {
   const email = emailInput.value.trim().toLowerCase();
-  const studentId = studentIdInput.value.trim().toUpperCase();
+  const enteredId = studentIdInput.value.trim().toUpperCase();
 
-  // Get students from localStorage
+  // Get students and admins from localStorage
   const users = getData("users");
+  const admins = getData("admins");
 
   // Find student using email
   const user = users.find(
     (u) => u.email.toLowerCase() === email
   );
 
-  // Check whether student account exists
-  if (!user) {
-    errorMsg.textContent =
-      "No student account found with this email address.";
+  // Find admin using email
+  const adminAccount = admins.find(
+    (a) => a.email.toLowerCase() === email
+  );
 
-    return;
-  }
-
-  // Check whether Student ID matches the same student
-  if (user.studentId.toUpperCase() !== studentId) {
+  // Check whether account exists
+  if (!user && !adminAccount) {
     errorMsg.textContent =
-      "Incorrect Student ID.";
+      "No student or admin account found with this email address.";
 
     return;
   }
 
   // ========================================
-  // PASSWORD RECOVERED SUCCESSFULLY
+  // STUDENT PASSWORD RECOVERY
   // ========================================
 
-  const recoveredPassword = user.password;
+  if (user) {
 
-  // Return to normal login mode
-  toggleRecoveryMode();
+    // Check whether Student ID matches
+    if (user.studentId.toUpperCase() !== enteredId) {
+      errorMsg.textContent = "Incorrect Student ID.";
+      return;
+    }
 
-  // Fill and display recovered password
-  passwordInput.value = recoveredPassword;
-  passwordInput.type = "text";
+    const recoveredPassword = user.password;
 
-  eyeOpen.style.display = "none";
-  eyeClosed.style.display = "block";
+    // Return to normal login mode
+    toggleRecoveryMode();
 
-  toggleBtn.setAttribute("aria-label", "Hide password");
+    // Fill and display recovered password
+    passwordInput.value = recoveredPassword;
+    passwordInput.type = "text";
 
-  // Display success message
-  errorMsg.textContent =
-    `Password recovered successfully! Your password is: ${recoveredPassword}`;
+    eyeOpen.style.display = "none";
+    eyeClosed.style.display = "block";
 
-  errorMsg.classList.add("success");
+    toggleBtn.setAttribute("aria-label", "Hide password");
+
+    // Display success message
+    errorMsg.textContent =
+      `Student password recovered successfully! Your password is: ${recoveredPassword}`;
+
+    errorMsg.classList.add("success");
+
+    return;
+  }
+
+  // ========================================
+  // ADMIN PASSWORD RECOVERY
+  // ========================================
+
+  if (adminAccount) {
+
+    // Check whether Admin ID matches
+    // Admin ID is stored in the studentId property
+    if (adminAccount.studentId.toUpperCase() !== enteredId) {
+      errorMsg.textContent = "Incorrect Admin ID.";
+      return;
+    }
+
+    const recoveredPassword = adminAccount.password;
+
+    // Return to normal login mode
+    toggleRecoveryMode();
+
+    // Fill and display recovered password
+    passwordInput.value = recoveredPassword;
+    passwordInput.type = "text";
+
+    eyeOpen.style.display = "none";
+    eyeClosed.style.display = "block";
+
+    toggleBtn.setAttribute("aria-label", "Hide password");
+
+    // Display success message
+    errorMsg.textContent =
+      `Admin password recovered successfully! Your password is: ${recoveredPassword}`;
+
+    errorMsg.classList.add("success");
+  }
 }
 
 
